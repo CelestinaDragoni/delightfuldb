@@ -1,0 +1,27 @@
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.6/phpunit.xsd"
+    backupGlobals="false"
+    backupStaticAttributes="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    forceCoversAnnotation="false"
+    processIsolation="true"
+    cacheResult="false"
+    stopOnError="true"
+    stopOnFailure="true"
+    stopOnIncomplete="false"
+    stopOnSkipped="false"
+    timeoutForSmallTests="1"
+    timeoutForMediumTests="10"
+    timeoutForLargeTests="60"
+    verbose="true"
+>
+    <testsuites>
+        <testsuite name="DelightfulDB Test Suite">
+            <directory>.</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
