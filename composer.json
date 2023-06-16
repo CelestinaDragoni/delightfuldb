@@ -1,0 +1,30 @@
+{
+    "name": "celestinadragoni/delightfuldb",
+    "description": "A Minimalistic, Performant, and Indexable NoSQL Document Store For PHP",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^9.6"
+    },
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*"
+    },
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Celestina Dragoni",
+            "email": "code@celestinadragoni.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "files": ["src/driver.php"]
+    },
+    "scripts": {
+        "test": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpunit --configuration ./tests/phpunit.xml"
+        ]
+    }
+}
