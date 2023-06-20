@@ -25,7 +25,7 @@ class Query {
    * @param Array $document
    * @return String
    */
-  public function createDocument(Store &$store, Array &$document) : String
+  public function createDocument(Store $store, Array $document) : String
   {
     // Check For Write Lock
     $store->setWriteLock();
@@ -75,7 +75,7 @@ class Query {
    * @param String $id
    * @return String
    */
-  public function updateDocumentById(Store &$store, Array &$document, String &$id) : String
+  public function updateDocumentById(Store $store, Array $document, String $id) : String
   {
     // Check For Write Lock
     $store->setWriteLock();
@@ -131,7 +131,7 @@ class Query {
    * @param String $id
    * @return String
    */
-  public function deleteDocumentById(Store &$store, String &$id) : Void
+  public function deleteDocumentById(Store $store, String $id) : Void
   {
     // Check For Write Lock
     $store->setWriteLock();
@@ -172,7 +172,7 @@ class Query {
    * @param String $id
    * @return String
    */
-  public function getDocumentById(Store &$store, String &$id) : Array
+  public function getDocumentById(Store $store, String $id) : Array
   {
     // Prevent Invalid IDs and Directory Taversing Exploits
     if (!Helper::validateId($id)) {
@@ -222,7 +222,7 @@ class Query {
    * @param Int $offset
    * @return Array
    */
-  public function getDocumentsByFulltextSearch(Store &$store, Index &$index, String &$search, Bool $opAnd = true, Int $limit = 0, Int $offset = 0) : Array
+  public function getDocumentsByFulltextSearch(Store $store, Index $index, String $search, Bool $opAnd = true, Int $limit = 0, Int $offset = 0) : Array
   {
     // Wait For Write Lock (If One)
     $store->waitWriteLock();
@@ -281,7 +281,7 @@ class Query {
    * @param Int $offset
    * @return \Generator
    */
-  public function getDocumentsByFulltextSearchGenerator(Store &$store, Index &$index, String &$search, Bool $opAnd = true, Int $limit = 0, Int $offset = 0) : \Generator
+  public function getDocumentsByFulltextSearchGenerator(Store $store, Index $index, String $search, Bool $opAnd = true, Int $limit = 0, Int $offset = 0) : \Generator
   {
     // Wait For Write Lock (If One)
     $store->waitWriteLock();
@@ -324,9 +324,6 @@ class Query {
         break;
       }
     }
-
-    // Return List of Documents
-    return $docs;
   }
 
   /**
@@ -337,7 +334,7 @@ class Query {
    * @param Bool $opAnd
    * @return Array
    */
-  public function getDocumentsByIndex(Store &$store, Index &$index, &$value, Int $limit = 0, Int $offset = 0) : Array
+  public function getDocumentsByIndex(Store $store, Index $index, $value, Int $limit = 0, Int $offset = 0) : Array
   {
     // Wait For Write Lock (If One)
     $store->waitWriteLock();
@@ -388,7 +385,7 @@ class Query {
    * @param Bool $opAnd
    * @return \Generator
    */
-  public function getDocumentsByIndexGenerator(Store &$store, Index &$index, &$value, Int $limit = 0, Int $offset = 0) : \Generator
+  public function getDocumentsByIndexGenerator(Store $store, Index $index, $value, Int $limit = 0, Int $offset = 0) : \Generator
   {
     // Wait For Write Lock (If One)
     $store->waitWriteLock();
@@ -426,8 +423,6 @@ class Query {
         break;
       }
     }
-
-    return $docs;
   }
 
   /**
@@ -438,7 +433,7 @@ class Query {
    * @param String $id (Exclude ID From Count)
    * @return Int
    */
-  public function countValueByIndex(Store &$store, Index &$index, $value, String $id = '') : Int
+  public function countValueByIndex(Store $store, Index $index, $value, String $id = '') : Int
   {
     // Wait For Write Lock (If One)
     $store->waitWriteLock();
@@ -470,7 +465,7 @@ class Query {
    * @param DelightfulDB\Models\Index $index
    * @return Array
    */
-  public function getDistinctByIndex(Store &$store, Index &$index) : Array
+  public function getDistinctByIndex(Store $store, Index $index) : Array
   {
     // Wait For Write Lock (If One)
     $store->waitWriteLock();
@@ -509,7 +504,7 @@ class Query {
    * @param DelightfulDB\Models\Store $store
    * @return Void
    */
-  public function forceReindex(Store &$store) : Void
+  public function forceReindex(Store $store) : Void
   {
     // Wait For Write Lock (If One)
     $store->waitWriteLock();

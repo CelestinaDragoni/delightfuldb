@@ -34,7 +34,7 @@ class Index
     }
 
     if ($index == '_fulltext') {
-      if (isset($config['distinct']) || $config['distinct']) {
+      if (isset($config['distinct'])) {
         throw new Exception('INDEX_FULLTEXT_NO_DISTINCT', $store, $index);
       }
 

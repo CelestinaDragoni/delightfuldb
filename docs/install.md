@@ -24,7 +24,7 @@ Download or clone this repo into your project. The `master` will always be stabl
 We're going to assume you put this into a `library/` folder for your project, however change this path to match yours. To load the driver into your code simply do the following:
 
 ```
-require_once('./library/driver.php');
+require_once('./library/delightfuldb/src/driver.php');
 ```
 The class will do all of the auto loading for you without you having to worry about it.
 

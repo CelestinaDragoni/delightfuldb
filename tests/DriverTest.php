@@ -417,9 +417,11 @@ class DriverTest extends TestCase {
         $distinctCount = $distinct[$key];
       }
 
+      $value = isset($distinct[$key]) ? $distinct[$key] : 0;
+
       $this->assertEquals(
         $count,
-        $distinct[$key],
+        $value,
         "[$key]::[$count] Invalid count for distinct search returned from getDistinctByIndex",
       );
     }

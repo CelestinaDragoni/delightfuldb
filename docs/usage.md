@@ -264,7 +264,7 @@ So for example, let's say you decided you really needed to have an existing valu
 How I recommend this being implemented is a few ways:
 
 - In your CI/CD or deploy process when schema changes occur.
-- Manually through command line as needed/
+- Manually through command line as needed.
 - A admin page that is locked behind an authentication gate to prevent bot abuse.
 
 ### Defintion
